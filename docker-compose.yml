@@ -5,7 +5,7 @@ services:
     build: .
     container_name: landing-araceli
     ports:
-      - "9500:3000"        # Externo:Interno -> cambia el 3000 externo si ya está usando otro servicio
+      - 9500:3000        # Externo:Interno -> cambia el 3000 externo si ya está usando otro servicio
     environment:
       - NODE_ENV=production
       - SITE_URL=${SITE_URL}   # usado por next-sitemap en build si construyes dentro de Synology
