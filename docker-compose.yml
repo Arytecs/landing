@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  landing:
+    build: .
+    container_name: landing-araceli
+    ports:
+      - "9500:3000"        # Externo:Interno -> cambia el 3000 externo si ya está usando otro servicio
+    environment:
+      - NODE_ENV=production
+      - SITE_URL=${SITE_URL}   # usado por next-sitemap en build si construyes dentro de Synology
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
