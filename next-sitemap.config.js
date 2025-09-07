@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://araceliteruel.com',
+  siteUrl: process.env.SITE_URL || 'https://araceliteruel.dabarma.synology.me',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
