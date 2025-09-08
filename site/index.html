@@ -40,8 +40,8 @@
     /* Hero */
     .hero{ padding:48px 0 }
     .hero-grid{ display:grid; grid-template-columns:1fr; gap:24px; align-items:center }
-    .hero-image figure{ position:relative }
-    .hero-image img{ border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.12); border:1px solid #e5e7eb; object-fit:cover }
+    .hero-image figure{ position:relative; margin:0 }
+    .hero-image img{ width:100%; height:auto; object-fit:cover }
     .hero-copy h1{ font-family:'Montserrat',sans-serif; font-size:clamp(32px,4vw,44px); line-height:1.1; color:var(--brand-ink); margin:12px 0 }
     .chip{ display:inline-flex; align-items:center; gap:8px; font-size:12px; border:1px solid #e5e7eb; border-radius:999px; padding:6px 10px; background:#fff }
     .dot{ width:8px; height:8px; border-radius:999px; background:var(--brand-sage) }
@@ -108,7 +108,7 @@
         <!-- Imagen primero en móvil -->
         <div class="hero-image">
           <figure>
-            <img src="hero.png" alt="Retrato de Araceli Teruel (reemplaza por hero.png)" />
+            <img src="hero.png" alt="Retrato de Araceli Teruel" />
           </figure>
         </div>
         <div class="hero-copy">
