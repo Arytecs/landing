@@ -1,0 +1,5 @@
+er-agent: *
+Allow: /
+
+
+Sitemap: https://araceliteruel.dabarma.synology.me/sitemap.xml
