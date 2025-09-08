@@ -1,75 +1,193 @@
 <!doctype html>
-<div>
-<h2>Quién soy</h2>
-<p>Soy Araceli Teruel, matemática y desarrolladora. He pasado más de 10 años ayudando a equipos a organizarse mejor y a que la tecnología trabaje a su favor. Mi estilo es sencillo: claridad, empatía y resultados.</p>
-<ul class="bullets">
-<li>• Automatización con IA que ahorra tiempo sin complicar a tu equipo.</li>
-<li>• Integraciones API y flujos serverless, explicados sin tecnicismos innecesarios.</li>
-<li>• Acompañamiento humano: procesos claros y formación práctica.</li>
-</ul>
-</div>
-<aside class="aside">
-<div class="aside-box">
-<div class="aside-k">Disponibilidad</div>
-<div class="aside-v">1–2 proyectos nuevos de diagnóstico</div>
-<p>¿Te encaja? Empezamos por un diagnóstico sencillo, sin compromisos y con valor inmediato.</p>
-<a href="#contacto" class="btn btn-outline">Reserva tu hueco</a>
-</div>
-</aside>
-</div>
-</section>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Araceli Teruel · Optimización de procesos con IA y automatización</title>
+  <meta name="description" content="Consultoría en procesos inteligentes, humanos y eficientes. Ayudo a pymes a optimizar sus operaciones con IA y automatización práctica." />
 
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- CTA -->
-<section class="section">
-<div class="container cta">
-<div>
-<div class="cta-title">¿Damos el primer paso?</div>
-<div class="cta-sub">Una llamada de 20–30 minutos para conocernos y ver dónde tiene sentido empezar.</div>
-</div>
-<a href="#contacto" class="btn btn-ink">Hablemos</a>
-</div>
-</section>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./styles.css" />
 
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Araceli Teruel · Optimización de procesos con IA y automatización" />
+  <meta property="og:description" content="Procesos más ágiles, humanos y rentables. Consultoría en automatización e IA aplicada a pymes." />
+  <meta property="og:image" content="hero.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Araceli Teruel · Procesos inteligentes, humanos y eficientes" />
+  <meta name="twitter:description" content="Optimización de procesos con IA y automatización práctica." />
+  <meta name="twitter:image" content="hero.png" />
 
-<!-- Contacto -->
-<section id="contacto" class="section section-alt">
-<div class="container contact-grid">
-<div>
-<h2>Contacto</h2>
-<p>Elige directamente en mi calendario el momento que mejor te vaya. Así de fácil.</p>
-<ul class="bullets small">
-<li><strong>Email:</strong> hola@araceliteruel.com</li>
-<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/araceliteruel" class="underline">/in/araceliteruel</a></li>
-</ul>
-</div>
-<div class="calendly">
-<iframe src="https://calendly.com/araceliteruel/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1" width="100%" height="600" frameborder="0" class="cal-frame" title="Calendly Araceli Teruel"></iframe>
-</div>
-</div>
-</section>
-</main>
+  <!-- JSON-LD (Person + Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Araceli Teruel",
+    "jobTitle": "Consultora en IA y optimización de procesos",
+    "url": "https://araceliteruel.dabarma.synology.me",
+    "image": "hero.png",
+    "description": "Consultoría en procesos inteligentes, humanos y eficientes. Ayudo a pymes a optimizar sus operaciones con IA y automatización práctica.",
+    "sameAs": ["https://www.linkedin.com/in/araceliteruel"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Araceli Teruel · Consultoría en IA y procesos",
+    "url": "https://araceliteruel.dabarma.synology.me",
+    "logo": "hero.png",
+    "description": "Consultoría especializada en optimización de procesos empresariales con Inteligencia Artificial y automatización.",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "hola@araceliteruel.com"
+    }],
+    "sameAs": ["https://www.linkedin.com/in/araceliteruel"]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">
+          <div class="brand-name">Araceli Teruel</div>
+          <div class="brand-tag">Procesos inteligentes, humanos y eficientes</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#quien-soy">Quién soy</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a href="#contacto" class="btn btn-rose">Reserva tu hueco</a>
+    </div>
+  </header>
 
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-image">
+          <figure>
+            <img src="hero.png" alt="Retrato de Araceli Teruel, consultora en IA y procesos" />
+          </figure>
+        </div>
+        <div class="hero-copy">
+          <span class="chip"><span class="dot"></span>Diagnóstico y automatización sin complicaciones</span>
+          <h1>Procesos más ágiles, humanos y rentables con IA</h1>
+          <p>Trabajo contigo para identificar qué procesos te frenan y cómo mejorarlos con automatización práctica y resultados medibles.</p>
+          <div class="hero-cta">
+            <a href="#contacto" class="btn btn-ink">Reserva tu llamada</a>
+            <a href="#servicios" class="btn btn-outline">Ver cómo trabajo</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer class="site-footer">
-<div class="container footer-inner">
-<div>© <span id="y">2025</span> Araceli Teruel — Procesos inteligentes, humanos y eficientes</div>
-<div><a href="#" class="underline">Política de privacidad</a></div>
-</div>
-</footer>
+    <!-- Servicios -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <h2>Mi forma de trabajar</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon" style="--c: var(--brand-sage)"></div>
+            <h3>Diagnóstico claro</h3>
+            <p>Hacemos una radiografía de tus procesos y priorizamos dónde vas a ganar más con IA y automatización.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" style="--c: var(--brand-rose)"></div>
+            <h3>Piloto rápido</h3>
+            <p>Implementamos un caso real en pocas semanas. Nada de eternas consultorías, sino resultados tangibles.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" style="--c: #d4d4d8"></div>
+            <h3>Escalado acompañado</h3>
+            <p>Si el piloto funciona, creamos un plan para escalar y formar al equipo, con indicadores claros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- Quién soy -->
+    <section id="quien-soy" class="section section-alt">
+      <div class="container about-grid">
+        <div>
+          <h2>Quién soy</h2>
+          <p>Soy Araceli Teruel, matemática y desarrolladora. He pasado más de 10 años ayudando a equipos a organizarse mejor y a que la tecnología trabaje a su favor. Mi estilo es sencillo: claridad, empatía y resultados.</p>
+          <ul class="bullets">
+            <li>• Automatización con IA que ahorra tiempo sin complicar a tu equipo.</li>
+            <li>• Integraciones API y flujos serverless, explicados sin tecnicismos innecesarios.</li>
+            <li>• Acompañamiento humano: procesos claros y formación práctica.</li>
+          </ul>
+        </div>
+        <aside class="aside">
+          <div class="aside-box">
+            <div class="aside-k">Disponibilidad</div>
+            <div class="aside-v">1–2 proyectos nuevos de diagnóstico</div>
+            <p>¿Te encaja? Empezamos por un diagnóstico sencillo, sin compromisos y con valor inmediato.</p>
+            <a href="#contacto" class="btn btn-outline">Reserva tu hueco</a>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<script>
-// año dinámico
-document.getElementById('y').textContent = new Date().getFullYear();
-// scroll suave para anclas
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-a.addEventListener('click', (e)=>{
-const id = a.getAttribute('href').slice(1);
-const el = document.getElementById(id);
-if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-})
-});
-</script>
+    <!-- CTA -->
+    <section class="section">
+      <div class="container cta">
+        <div>
+          <div class="cta-title">¿Damos el primer paso?</div>
+          <div class="cta-sub">Una llamada de 20–30 minutos para conocernos y ver dónde tiene sentido empezar.</div>
+        </div>
+        <a href="#contacto" class="btn btn-ink">Hablemos</a>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section section-alt">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contacto</h2>
+          <p>Elige directamente en mi calendario el momento que mejor te vaya. Así de fácil.</p>
+          <ul class="bullets small">
+            <li><strong>Email:</strong> hola@araceliteruel.com</li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/araceliteruel" class="underline">/in/araceliteruel</a></li>
+          </ul>
+        </div>
+        <div class="calendly">
+          <iframe src="https://calendly.com/araceliteruel/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1" width="100%" height="600" frameborder="0" class="cal-frame" title="Calendly Araceli Teruel"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="y">2025</span> Araceli Teruel — Procesos inteligentes, humanos y eficientes</div>
+      <div><a href="#" class="underline">Política de privacidad</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // scroll suave para anclas
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    });
+  </script>
 </body>
 </html>
