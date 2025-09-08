@@ -11,48 +11,76 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    :root{ --brand-sage:#B8C2B0; --brand-rose:#EAD3CB; --brand-ink:#0F172A; }
+    *{ box-sizing:border-box }
+    html,body{ margin:0; padding:0 }
+    body{ font-family:'Roboto',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'; color:#111; background:#fafafa }
+    img{ max-width:100%; display:block }
+    a{ color:inherit }
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Araceli Teruel · Optimización de procesos con IA y automatización" />
-  <meta property="og:description" content="Procesos más ágiles, humanos y rentables. Consultoría en automatización e IA aplicada a pymes." />
-  <meta property="og:image" content="hero.png" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Araceli Teruel · Procesos inteligentes, humanos y eficientes" />
-  <meta name="twitter:description" content="Optimización de procesos con IA y automatización práctica." />
-  <meta name="twitter:image" content="hero.png" />
+    .container{ max-width:1120px; margin:0 auto; padding:0 16px }
+    .underline{ text-decoration:underline }
 
-  <!-- JSON-LD (Person + Organization) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Araceli Teruel",
-    "jobTitle": "Consultora en IA y optimización de procesos",
-    "url": "https://araceliteruel.dabarma.synology.me",
-    "image": "hero.png",
-    "description": "Consultoría en procesos inteligentes, humanos y eficientes. Ayudo a pymes a optimizar sus operaciones con IA y automatización práctica.",
-    "sameAs": ["https://www.linkedin.com/in/araceliteruel"]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Araceli Teruel · Consultoría en IA y procesos",
-    "url": "https://araceliteruel.dabarma.synology.me",
-    "logo": "hero.png",
-    "description": "Consultoría especializada en optimización de procesos empresariales con Inteligencia Artificial y automatización.",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "hola@araceliteruel.com"
-    }],
-    "sameAs": ["https://www.linkedin.com/in/araceliteruel"]
-  }
-  </script>
+    /* Header */
+    .site-header{ position:sticky; top:0; z-index:40; background:rgba(255,255,255,.9); backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid #e5e7eb }
+    .header-inner{ height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px }
+    .brand{ display:flex; align-items:center; gap:12px }
+    .brand-mark{ width:32px; height:32px; border-radius:12px; background:linear-gradient(135deg,var(--brand-sage),var(--brand-rose)) }
+    .brand-name{ font-family:'Montserrat',sans-serif; font-weight:700 }
+    .brand-tag{ font-size:12px; color:#666 }
+    .nav{ display:none; gap:24px }
+    .nav a{ text-decoration:none }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; border-radius:12px; padding:10px 16px; font-weight:600; text-decoration:none; border:1px solid #e5e7eb; transition:.2s }
+    .btn:hover{ box-shadow:0 6px 14px rgba(0,0,0,.06) }
+    .btn-rose{ background:var(--brand-rose) }
+    .btn-ink{ background:var(--brand-ink); color:#fff; border-color:transparent }
+    .btn-outline{ background:#fff }
+
+    /* Hero */
+    .hero{ padding:48px 0 }
+    .hero-grid{ display:grid; grid-template-columns:1fr; gap:24px; align-items:center }
+    .hero-image figure{ position:relative }
+    .hero-image img{ border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.12); border:1px solid #e5e7eb; object-fit:cover }
+    .hero-copy h1{ font-family:'Montserrat',sans-serif; font-size:clamp(32px,4vw,44px); line-height:1.1; color:var(--brand-ink); margin:12px 0 }
+    .chip{ display:inline-flex; align-items:center; gap:8px; font-size:12px; border:1px solid #e5e7eb; border-radius:999px; padding:6px 10px; background:#fff }
+    .dot{ width:8px; height:8px; border-radius:999px; background:var(--brand-sage) }
+    .hero-cta{ display:flex; gap:12px; flex-wrap:wrap }
+
+    /* Sections */
+    .section{ padding:64px 0 }
+    .section-alt{ background:#fff; border-top:1px solid #e5e7eb; border-bottom:1px solid #e5e7eb }
+    .cards{ display:grid; grid-template-columns:1fr; gap:16px; margin-top:24px }
+    .card{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px }
+    .card-icon{ width:40px; height:40px; border-radius:12px; background:var(--c,#d4d4d8); margin-bottom:12px }
+
+    .about-grid{ display:grid; grid-template-columns:1fr; gap:24px; align-items:start }
+    .bullets{ padding-left:0; margin:16px 0 0 0 }
+    .bullets li{ list-style:none; margin:6px 0 }
+    .bullets.small{ font-size:14px }
+    .aside .aside-box{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; box-shadow:0 4px 16px rgba(0,0,0,.04) }
+    .aside-k{ font-size:12px; color:#666 }
+    .aside-v{ font-family:'Montserrat',sans-serif; font-weight:700; margin-top:4px }
+
+    .cta{ display:flex; gap:16px; align-items:center; justify-content:space-between; background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:16px }
+    .cta-title{ font-weight:700 }
+    .cta-sub{ font-size:14px; color:#444 }
+
+    .contact-grid{ display:grid; grid-template-columns:1fr; gap:24px }
+    .cal-frame{ border-radius:12px; border:1px solid #e5e7eb; background:#f6f7f8 }
+
+    /* Footer */
+    .site-footer{ border-top:1px solid #e5e7eb; background:#fff; padding:24px 0 }
+    .footer-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:14px; color:#666 }
+
+    /* Responsive */
+    @media (min-width: 960px){
+      .nav{ display:flex }
+      .hero-grid{ grid-template-columns:1fr 1fr }
+      .about-grid{ grid-template-columns:7fr 5fr }
+      .contact-grid{ grid-template-columns:1fr 1fr }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -77,9 +105,10 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
+        <!-- Imagen primero en móvil -->
         <div class="hero-image">
           <figure>
-            <img src="hero.png" alt="Retrato de Araceli Teruel, consultora en IA y procesos" />
+            <img src="hero.png" alt="Retrato de Araceli Teruel (reemplaza por hero.png)" />
           </figure>
         </div>
         <div class="hero-copy">
@@ -97,21 +126,21 @@
     <!-- Servicios -->
     <section id="servicios" class="section">
       <div class="container">
-        <h2>Mi forma de trabajar</h2>
+        <h2 style="font-family:'Montserrat',sans-serif; font-weight:700">Mi forma de trabajar</h2>
         <div class="cards">
           <article class="card">
             <div class="card-icon" style="--c: var(--brand-sage)"></div>
-            <h3>Diagnóstico claro</h3>
+            <h3 style="font-family:'Montserrat',sans-serif; font-weight:700">Diagnóstico claro</h3>
             <p>Hacemos una radiografía de tus procesos y priorizamos dónde vas a ganar más con IA y automatización.</p>
           </article>
           <article class="card">
             <div class="card-icon" style="--c: var(--brand-rose)"></div>
-            <h3>Piloto rápido</h3>
+            <h3 style="font-family:'Montserrat',sans-serif; font-weight:700">Piloto rápido</h3>
             <p>Implementamos un caso real en pocas semanas. Nada de eternas consultorías, sino resultados tangibles.</p>
           </article>
           <article class="card">
             <div class="card-icon" style="--c: #d4d4d8"></div>
-            <h3>Escalado acompañado</h3>
+            <h3 style="font-family:'Montserrat',sans-serif; font-weight:700">Escalado acompañado</h3>
             <p>Si el piloto funciona, creamos un plan para escalar y formar al equipo, con indicadores claros.</p>
           </article>
         </div>
@@ -122,7 +151,7 @@
     <section id="quien-soy" class="section section-alt">
       <div class="container about-grid">
         <div>
-          <h2>Quién soy</h2>
+          <h2 style="font-family:'Montserrat',sans-serif; font-weight:700">Quién soy</h2>
           <p>Soy Araceli Teruel, matemática y desarrolladora. He pasado más de 10 años ayudando a equipos a organizarse mejor y a que la tecnología trabaje a su favor. Mi estilo es sencillo: claridad, empatía y resultados.</p>
           <ul class="bullets">
             <li>• Automatización con IA que ahorra tiempo sin complicar a tu equipo.</li>
@@ -145,7 +174,7 @@
     <section class="section">
       <div class="container cta">
         <div>
-          <div class="cta-title">¿Damos el primer paso?</div>
+          <div class="cta-title" style="font-family:'Montserrat',sans-serif; font-weight:700">¿Damos el primer paso?</div>
           <div class="cta-sub">Una llamada de 20–30 minutos para conocernos y ver dónde tiene sentido empezar.</div>
         </div>
         <a href="#contacto" class="btn btn-ink">Hablemos</a>
@@ -156,7 +185,7 @@
     <section id="contacto" class="section section-alt">
       <div class="container contact-grid">
         <div>
-          <h2>Contacto</h2>
+          <h2 style="font-family:'Montserrat',sans-serif; font-weight:700">Contacto</h2>
           <p>Elige directamente en mi calendario el momento que mejor te vaya. Así de fácil.</p>
           <ul class="bullets small">
             <li><strong>Email:</strong> hola@araceliteruel.com</li>
@@ -164,7 +193,14 @@
           </ul>
         </div>
         <div class="calendly">
-          <iframe src="https://calendly.com/araceliteruel/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1" width="100%" height="600" frameborder="0" class="cal-frame" title="Calendly Araceli Teruel"></iframe>
+          <iframe
+            src="https://calendly.com/araceliteruel/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1"
+            width="100%"
+            height="600"
+            frameborder="0"
+            class="cal-frame"
+            title="Calendly Araceli Teruel"
+          ></iframe>
         </div>
       </div>
     </section>
