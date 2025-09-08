@@ -1,0 +1,75 @@
+<!doctype html>
+<div>
+<h2>Quién soy</h2>
+<p>Soy Araceli Teruel, matemática y desarrolladora. He pasado más de 10 años ayudando a equipos a organizarse mejor y a que la tecnología trabaje a su favor. Mi estilo es sencillo: claridad, empatía y resultados.</p>
+<ul class="bullets">
+<li>• Automatización con IA que ahorra tiempo sin complicar a tu equipo.</li>
+<li>• Integraciones API y flujos serverless, explicados sin tecnicismos innecesarios.</li>
+<li>• Acompañamiento humano: procesos claros y formación práctica.</li>
+</ul>
+</div>
+<aside class="aside">
+<div class="aside-box">
+<div class="aside-k">Disponibilidad</div>
+<div class="aside-v">1–2 proyectos nuevos de diagnóstico</div>
+<p>¿Te encaja? Empezamos por un diagnóstico sencillo, sin compromisos y con valor inmediato.</p>
+<a href="#contacto" class="btn btn-outline">Reserva tu hueco</a>
+</div>
+</aside>
+</div>
+</section>
+
+
+<!-- CTA -->
+<section class="section">
+<div class="container cta">
+<div>
+<div class="cta-title">¿Damos el primer paso?</div>
+<div class="cta-sub">Una llamada de 20–30 minutos para conocernos y ver dónde tiene sentido empezar.</div>
+</div>
+<a href="#contacto" class="btn btn-ink">Hablemos</a>
+</div>
+</section>
+
+
+<!-- Contacto -->
+<section id="contacto" class="section section-alt">
+<div class="container contact-grid">
+<div>
+<h2>Contacto</h2>
+<p>Elige directamente en mi calendario el momento que mejor te vaya. Así de fácil.</p>
+<ul class="bullets small">
+<li><strong>Email:</strong> hola@araceliteruel.com</li>
+<li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/araceliteruel" class="underline">/in/araceliteruel</a></li>
+</ul>
+</div>
+<div class="calendly">
+<iframe src="https://calendly.com/araceliteruel/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1" width="100%" height="600" frameborder="0" class="cal-frame" title="Calendly Araceli Teruel"></iframe>
+</div>
+</div>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<div>© <span id="y">2025</span> Araceli Teruel — Procesos inteligentes, humanos y eficientes</div>
+<div><a href="#" class="underline">Política de privacidad</a></div>
+</div>
+</footer>
+
+
+<script>
+// año dinámico
+document.getElementById('y').textContent = new Date().getFullYear();
+// scroll suave para anclas
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+a.addEventListener('click', (e)=>{
+const id = a.getAttribute('href').slice(1);
+const el = document.getElementById(id);
+if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+})
+});
+</script>
+</body>
+</html>
