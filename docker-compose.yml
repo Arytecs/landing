@@ -4,5 +4,5 @@ services:
     build: .
     container_name: landing-araceli
     ports:
-      - 9500:3000
+      - 3000:9500
     restart: unless-stopped
