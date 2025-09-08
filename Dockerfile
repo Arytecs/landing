@@ -1,23 +1,14 @@
-# Etapa 1: build
-FROM node:18-alpine AS builder
-WORKDIR /app
+# Usa la imagen ligera de nginx
+FROM nginx:alpine
 
-COPY package*.json ./
-RUN npm install --frozen-lockfile
 
-COPY . .
-RUN npm run build && npm run postbuild
+# Copiamos nuestra página estática al directorio de nginx
+COPY . /usr/share/nginx/html
 
-# Etapa 2: runtime
-FROM node:18-alpine AS runner
-WORKDIR /app
 
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/package*.json ./
-
-RUN npm install --production --frozen-lockfile
-
+# Exponemos el puerto 3000
 EXPOSE 3000
-CMD ["npm", "start"]
 
+
+# Arrancamos nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]
