@@ -67,9 +67,14 @@ export default function LandingAraceli() {
       </Head>
 
       {/* Brand tokens + fuentes */}
-      <style>{`
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap"
+          rel="stylesheet"
+        />
+        <style>{`
         :root{ --brand-sage:#B8C2B0; --brand-rose:#EAD3CB; --brand-ink:#0F172A; }
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap');
         .font-display{font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'}
         .font-body{font-family:'Roboto',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'}
       `}</style>
@@ -231,3 +236,4 @@ export default function LandingAraceli() {
     </div>
   );
 }
+
