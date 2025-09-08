@@ -3,7 +3,7 @@ FROM nginx:alpine
 
 
 # Copiamos nuestra página estática al directorio de nginx
-COPY . /usr/share/nginx/html
+COPY site/ /usr/share/nginx/html
 
 
 # Exponemos el puerto 3000
