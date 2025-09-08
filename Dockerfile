@@ -6,8 +6,8 @@ FROM nginx:alpine
 COPY site/ /usr/share/nginx/html
 
 
-# Exponemos el puerto 3000
-EXPOSE 3000
+# Exponemos el puerto 80
+EXPOSE 80
 
 
 # Arrancamos nginx en primer plano
