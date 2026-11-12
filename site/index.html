@@ -171,6 +171,14 @@ header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--b
 .case-step p{font-size:14.5px;color:var(--ink-2);line-height:1.55}
 .case-step ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-2);line-height:1.6}
 .case-btns{display:flex;gap:12px;flex-wrap:wrap}
+html,body{overflow-x:clip}
+.case-step li b{color:var(--ink);font-weight:600}
+.case-step li+li{margin-top:6px}
+.case-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 28px}
+.case-stats div{background:var(--violet-050);border-radius:var(--r-lg);padding:14px 16px}
+.case-stats b{display:block;font-family:var(--font-display);font-size:28px;font-weight:600;color:var(--violet-600);line-height:1.1}
+.case-stats span{display:block;font-size:13px;color:var(--ink-2);line-height:1.35;margin-top:4px}
+@media(max-width:620px){.case-stats{grid-template-columns:1fr}.case-stats div{display:flex;align-items:baseline;gap:12px}.case-stats span{margin-top:0}}
 @media(max-width:920px){
   .case{grid-template-columns:1fr;gap:36px;padding:32px 28px}
   .case-media{max-width:320px;width:100%;margin:0 auto}
@@ -472,23 +480,31 @@ footer{padding:58px 0 34px}
           <div class="case-steps">
             <div class="case-step">
               <div class="ic"><svg data-lucide="circle-alert"></svg></div>
-              <div><h3>El punto de partida</h3><p>La web no permitía reservar online, y los precios y tratamientos eran difíciles de mantener al día.</p></div>
+              <div><h3>El punto de partida</h3><p>Una web antigua que dependía de programas de pago con licencias que no eran suyas. No se podía reservar online: las citas iban por teléfono y WhatsApp, y cambiar un precio o un tratamiento costaba.</p></div>
             </div>
             <div class="case-step">
               <div class="ic"><svg data-lucide="wrench"></svg></div>
               <div><h3>Lo que hicimos</h3>
                 <ul>
-                  <li>Puesta a punto y seguridad de la web.</li>
-                  <li>Reservas online con una señal de 10 € con tarjeta, para reducir las citas que no se presentan.</li>
-                  <li>Rediseño y nueva sección de medicina estética.</li>
-                  <li>Formación para que ella misma actualice sus precios.</li>
+                  <li><b>Web nueva desde cero</b>, con diseño propio y sus 28 tratamientos en fichas con precios, bonos, fotos y vídeos.</li>
+                  <li><b>Reservas propias, sin licencias.</b> Solo ofrece los huecos libres según su horario y su calendario, deja margen entre clientas y cobra una señal de 10 € con tarjeta.</li>
+                  <li><b>Su agenda, bajo control.</b> Ve sus citas del día y de la semana en un panel con botones grandes. Cada cita se apunta sola en su Google Calendar, lo que ya tiene ocupado no se ofrece, y ella decide qué días cierra y qué tratamientos da solo ciertos días.</li>
+                  <li><b>Bonos, tarjetas regalo y promociones</b> que se aplican solos, con sus sesiones y su caducidad. La clienta cambia o anula su cita desde el correo, sin llamar.</li>
+                  <li><b>Sin depender de nadie para el día a día.</b> Ella misma cambia precios, textos y fotos de cualquier tratamiento y crea sus promociones. Le dejé cuatro manuales paso a paso: agenda, tratamientos, promociones y lo que conviene saber.</li>
+                  <li><b>Preparada para que la encuentren en Google.</b> Cada página con su título y su descripción, las direcciones de la web antigua redirigidas para no perder lo ganado y la cuenta de Google a su nombre. Nota máxima en buscadores y accesibilidad, y muy rápida al cargar.</li>
+                  <li><b>Segura y revisada.</b> Copias diarias, cookies en regla, y cada cambio pasa un centenar de pruebas antes de publicarse y una revisión de la web real después.</li>
                 </ul>
               </div>
             </div>
             <div class="case-step">
               <div class="ic"><svg data-lucide="check"></svg></div>
-              <div><h3>El resultado</h3><p>Sus clientas eligen tratamiento, día y hora, y pagan la señal desde el móvil, sin llamar ni escribir por WhatsApp.</p></div>
+              <div><h3>El resultado</h3><p>Sus clientas eligen tratamiento, día y hora, y pagan la señal desde el móvil. La web abrió el 12 de noviembre con una promoción de lanzamiento, y el primer día ya entraron tres reservas online.</p></div>
             </div>
+          </div>
+          <div class="case-stats">
+            <div><b>6</b><span>semanas de la primera reunión a la web abierta</span></div>
+            <div><b>0 €</b><span>en licencias de reservas</span></div>
+            <div><b>100</b><span>sobre 100 en buscadores y accesibilidad</span></div>
           </div>
           <div class="case-btns">
             <a href="https://laurasentium.es" target="_blank" rel="noopener" class="at-btn at-btn--outline">Ver la web de Laura Sentium</a>
