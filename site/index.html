@@ -1,229 +1,858 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Araceli Teruel · Optimización de procesos con IA y automatización</title>
-  <meta name="description" content="Consultoría en procesos inteligentes, humanos y eficientes. Ayudo a pymes a optimizar sus operaciones con IA y automatización práctica." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Araceli Teruel · Mejora de procesos para pymes (con IA cuando suma)</title>
+<meta name="description" content="Ordeno y mejoro los procesos de tu pyme para que dejen de frenarte, y los automatizo con IA donde de verdad aporta. Menos caos, menos errores, más tiempo. Primera llamada gratuita." />
+<meta property="og:title" content="Araceli Teruel · Mejora de procesos para pymes" />
+<meta property="og:description" content="Primero ordeno cómo funciona tu empresa por dentro; luego automatizo con IA lo que tiene sentido. Sin tecnicismos. Primera llamada gratuita." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://araceliteruel.es/" />
+<meta property="og:image" content="https://araceliteruel.es/og-hero.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{ --brand-sage:#B8C2B0; --brand-rose:#EAD3CB; --brand-ink:#0F172A; }
-    *{ box-sizing:border-box }
-    html,body{ margin:0; padding:0 }
-    body{ font-family:'Roboto',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'; color:#111; background:#fafafa }
-    img{ max-width:100%; display:block }
-    a{ color:inherit }
+<style>
+/* ===== Tokens de marca · "Innovación viva" ===== */
+:root{
+  --violet-900:#211A33;--violet-800:#2B2143;--violet-700:#4B3B7A;--violet-600:#5B4196;
+  --violet-500:#6A4FB5;--violet-400:#8E6BE6;--violet-300:#B6A2EE;--violet-200:#C9B8F2;
+  --violet-100:#E6DEF7;--violet-050:#F0EBFA;
+  --coral-700:#C9684C;--coral-600:#E07E63;--coral-500:#EF9A82;--coral-300:#F6C3B4;
+  --coral-200:#F8D2C7;--coral-100:#FBE4DC;
+  --bg:#F5F1FA;--surface:#FFFFFF;--surface-2:#FBF9FE;--wash:#ECE5F8;
+  --ink:#221A33;--ink-2:#4A4060;--ink-3:#7C7390;--line:#E4DCEF;--line-2:#EFEAF8;
+  --font-display:'Space Grotesk',system-ui,sans-serif;--font-body:'Hanken Grotesk',system-ui,sans-serif;
+  --t-display:clamp(40px,6vw,64px);--t-h2:clamp(26px,3.2vw,38px);
+  --tracking-tight:-0.02em;--tracking-over:0.14em;
+  --r-lg:20px;--r-xl:28px;--r-2xl:36px;--r-pill:999px;
+  --sh-sm:0 1px 2px rgba(33,26,51,.05),0 2px 8px -4px rgba(75,59,122,.16);
+  --sh:0 1px 2px rgba(33,26,51,.05),0 12px 28px -14px rgba(75,59,122,.30);
+  --sh-lg:0 2px 4px rgba(33,26,51,.06),0 30px 60px -24px rgba(75,59,122,.40);
+  --sh-coral:0 12px 28px -12px rgba(224,126,99,.45);--sh-violet:0 12px 28px -12px rgba(106,79,181,.5);
+  --ease:cubic-bezier(.22,.61,.36,1);--ease-out:cubic-bezier(.16,1,.3,1);--dur:.22s;
+}
+.at-overline{font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:var(--tracking-over);text-transform:uppercase;color:var(--violet-500)}
+.at-chip{font-family:var(--font-body);font-size:13px;font-weight:600;padding:6px 13px;border-radius:var(--r-pill);background:var(--violet-050);color:var(--violet-600);display:inline-flex;align-items:center;gap:6px}
+.at-btn{font-family:var(--font-body);font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:var(--r-pill);border:none;cursor:pointer;transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),background var(--dur) var(--ease);text-decoration:none;line-height:1}
+.at-btn:hover{transform:translateY(-2px)}.at-btn:active{transform:translateY(0)}
+.at-btn--primary{background:var(--violet-500);color:#fff;box-shadow:var(--sh-violet)}.at-btn--primary:hover{background:var(--violet-600)}
+.at-btn--coral{background:var(--coral-500);color:#3a1a10;box-shadow:var(--sh-coral)}.at-btn--coral:hover{background:var(--coral-600);color:#fff}
+.at-btn--outline{background:transparent;color:var(--violet-600);box-shadow:inset 0 0 0 1.6px var(--violet-200)}.at-btn--outline:hover{box-shadow:inset 0 0 0 1.6px var(--violet-400);background:var(--violet-050)}
 
-    .container{ max-width:1120px; margin:0 auto; padding:0 16px }
-    .underline{ text-decoration:underline }
+/* ===== Base ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.shell{max-width:1200px;margin:0 auto;padding:0 28px}
+section{position:relative}
+img{max-width:100%;display:block}
+::selection{background:var(--violet-200)}
 
-    /* Header */
-    .site-header{ position:sticky; top:0; z-index:40; background:rgba(255,255,255,.9); backdrop-filter:saturate(140%) blur(6px); border-bottom:1px solid #e5e7eb }
-    .header-inner{ height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px }
-    .brand{ display:flex; align-items:center; gap:12px }
-    .brand-mark{ width:32px; height:32px; border-radius:12px; background:linear-gradient(135deg,var(--brand-sage),var(--brand-rose)) }
-    .brand-name{ font-family:'Montserrat',sans-serif; font-weight:700 }
-    .brand-tag{ font-size:12px; color:#666 }
-    .nav{ display:none; gap:24px }
-    .nav a{ text-decoration:none }
-    .btn{ display:inline-flex; align-items:center; justify-content:center; border-radius:12px; padding:10px 16px; font-weight:600; text-decoration:none; border:1px solid #e5e7eb; transition:.2s }
-    .btn:hover{ box-shadow:0 6px 14px rgba(0,0,0,.06) }
-    .btn-rose{ background:var(--brand-rose) }
-    .btn-ink{ background:var(--brand-ink); color:#fff; border-color:transparent }
-    .btn-outline{ background:#fff }
+/* NAV */
+header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-2)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.brand img{width:38px;height:38px;object-fit:contain}
+.brand b{font-family:var(--font-display);font-weight:600;font-size:19px;color:var(--ink);letter-spacing:-.01em}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:14.5px;color:var(--ink-2);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--violet-500)}
 
-    /* Hero */
-    .hero{ padding:48px 0 }
-    .hero-grid{ display:grid; grid-template-columns:1fr; gap:24px; align-items:center }
-    .hero-image figure{ position:relative; margin:0 }
-    .hero-image img{ width:100%; height:auto; object-fit:cover }
-    .hero-copy h1{ font-family:'Montserrat',sans-serif; font-size:clamp(32px,4vw,44px); line-height:1.1; color:var(--brand-ink); margin:12px 0 }
-    .chip{ display:inline-flex; align-items:center; gap:8px; font-size:12px; border:1px solid #e5e7eb; border-radius:999px; padding:6px 10px; background:#fff }
-    .dot{ width:8px; height:8px; border-radius:999px; background:var(--brand-sage) }
-    .hero-cta{ display:flex; gap:12px; flex-wrap:wrap }
+/* HERO */
+.hero{padding:70px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:22px}
+.hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--coral-500);box-shadow:0 0 0 4px var(--coral-100)}
+.hero h1{font-family:var(--font-display);font-weight:600;font-size:var(--t-display);line-height:1.02;letter-spacing:var(--tracking-tight);color:var(--ink);margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--violet-500)}
+.hero p.lead{font-size:19px;line-height:1.55;color:var(--ink-2);max-width:50ch;margin-bottom:30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.hero-trust{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.hero-trust .av{display:flex}
+.hero-trust .av span{width:34px;height:34px;border-radius:50%;margin-left:-9px;border:2.5px solid var(--bg);background:linear-gradient(135deg,var(--violet-300),var(--coral-300))}
+.hero-trust .av span:first-child{margin-left:0}
+.hero-trust small{font-size:13.5px;color:var(--ink-3);line-height:1.35}
+.hero-trust small b{color:var(--ink);font-weight:700}
+.hero-art{position:relative}
+.portrait-frame{position:relative;aspect-ratio:1/1.08;border-radius:48% 52% 47% 53% / 55% 53% 47% 45%;overflow:hidden;box-shadow:var(--sh-lg);background:linear-gradient(155deg,var(--violet-400),var(--violet-600) 60%,var(--coral-500))}
+.portrait-frame img{width:100%;height:100%;object-fit:contain;object-position:center bottom;padding-top:14px}
+.blob-bg{position:absolute;inset:-8% -10% -8% -6%;z-index:-1;border-radius:48% 52% 47% 53% / 55% 53% 47% 45%;background:radial-gradient(120% 120% at 30% 20%,var(--violet-100),transparent 60%),radial-gradient(120% 120% at 80% 90%,var(--coral-100),transparent 55%)}
+.float{position:absolute;background:var(--surface);border-radius:16px;box-shadow:var(--sh);padding:13px 16px;display:flex;align-items:center;gap:11px;border:1px solid var(--line-2)}
+.float .ic{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:none}
+.float b{font-family:var(--font-display);font-size:17px;font-weight:600;line-height:1;color:var(--ink);display:block}
+.float span{font-size:12px;color:var(--ink-3)}
+.float.f1{top:24px;left:-30px}.float.f2{bottom:40px;right:-26px}
+.float .ic svg{width:20px;height:20px}
 
-    /* Sections */
-    .section{ padding:64px 0 }
-    .section-alt{ background:#fff; border-top:1px solid #e5e7eb; border-bottom:1px solid #e5e7eb }
-    .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:24px }
-    .card{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px }
-    .card-icon{ width:40px; height:40px; border-radius:12px; background:var(--c,#d4d4d8); margin-bottom:12px }
+/* SECTOR STRIP */
+.sectors{padding:6px 0 18px}
+.sectors-in{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}
+.sectors-in span{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.sectors-in b{font-family:var(--font-display);font-weight:500;font-size:17px;color:var(--ink-2)}
 
-    .about-grid{ display:grid; grid-template-columns:1fr; gap:24px; align-items:start }
-    .bullets{ padding-left:0; margin:16px 0 0 0 }
-    .bullets li{ list-style:none; margin:6px 0 }
-    .bullets.small{ font-size:14px }
-    .aside .aside-box{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; box-shadow:0 4px 16px rgba(0,0,0,.04) }
-    .aside-k{ font-size:12px; color:#666 }
-    .aside-v{ font-family:'Montserrat',sans-serif; font-weight:700; margin-top:4px }
+/* SECTION HEADERS */
+.sec{padding:88px 0}
+.sec-head{max-width:700px;margin-bottom:48px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-family:var(--font-display);font-weight:600;font-size:var(--t-h2);line-height:1.12;letter-spacing:var(--tracking-tight);color:var(--ink);margin:14px 0 14px}
+.sec-head h2 em{font-style:italic;color:var(--violet-500)}
+.sec-head p{font-size:17px;color:var(--ink-2);line-height:1.55}
 
-    .cta{ display:flex; gap:16px; align-items:center; justify-content:space-between; background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:16px }
-    .cta-title{ font-weight:700 }
-    .cta-sub{ font-size:14px; color:#444 }
+/* SERVICIOS */
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.svc{position:relative;background:var(--surface);border-radius:var(--r-lg);padding:32px;border:1px solid var(--line-2);box-shadow:var(--sh-sm);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.svc .ic{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:var(--violet-050);color:var(--violet-500)}
+.svc:nth-child(2) .ic,.svc:nth-child(3) .ic{background:var(--coral-100);color:var(--coral-700)}
+.svc .ic svg{width:25px;height:25px}
+.svc .num{position:absolute;top:30px;right:32px;font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--violet-200)}
+.svc h3{font-family:var(--font-display);font-size:22px;font-weight:600;margin-bottom:11px;color:var(--ink)}
+.svc p{font-size:15.5px;color:var(--ink-2);line-height:1.6;margin-bottom:16px}
+.svc .tag{font-size:13px;color:var(--ink-3);display:flex;align-items:center;gap:8px;padding-top:14px;border-top:1px solid var(--line-2)}
+.svc .tag svg{width:15px;height:15px;color:var(--coral-600);flex:none}
 
-    .contact-grid{ display:grid; grid-template-columns:1fr; gap:24px }
-    .cal-frame{ border-radius:12px; border:1px solid #e5e7eb; background:#f6f7f8 }
+/* BENEFICIOS */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.benefit{background:var(--surface);border-radius:var(--r-lg);padding:30px;border:1px solid var(--line-2);box-shadow:var(--sh-sm);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.benefit:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.benefit .ic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:var(--violet-050);color:var(--violet-500)}
+.benefit:nth-child(2) .ic{background:var(--coral-100);color:var(--coral-700)}
+.benefit .ic svg{width:24px;height:24px}
+.benefit h3{font-family:var(--font-display);font-size:21px;font-weight:600;margin-bottom:10px;color:var(--ink)}
+.benefit p{font-size:15px;color:var(--ink-2);line-height:1.55}
 
-    /* Footer */
-    .site-footer{ border-top:1px solid #e5e7eb; background:#fff; padding:24px 0 }
-    .footer-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:14px; color:#666 }
+/* PROCESO */
+.proceso{background:var(--violet-900);color:#fff;border-radius:var(--r-2xl);padding:64px 56px;position:relative;overflow:hidden}
+.proceso::before{content:"";position:absolute;top:-120px;right:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,var(--violet-600),transparent 65%);opacity:.55}
+.proceso .sec-head h2{color:#fff}
+.proceso .sec-head h2 em{color:var(--coral-500)}
+.proceso .sec-head p{color:var(--violet-200)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative}
+.step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:26px 22px;backdrop-filter:blur(4px)}
+.step .n{font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--coral-500);letter-spacing:.06em;margin-bottom:16px}
+.step h4{font-family:var(--font-display);font-size:18px;font-weight:600;margin-bottom:10px;line-height:1.2}
+.step p{font-size:13.5px;color:var(--violet-200);line-height:1.5;margin-bottom:14px}
+.step .deliver{font-size:12.5px;color:#fff;display:flex;align-items:flex-start;gap:7px;padding-top:13px;border-top:1px solid rgba(255,255,255,.12)}
+.step .deliver svg{width:15px;height:15px;color:var(--coral-500);flex:none;margin-top:1px}
 
-    /* Responsive */
-    @media (min-width: 960px){
-      .nav{ display:flex }
-      .hero-grid{ grid-template-columns:1fr 1fr }
-      .about-grid{ grid-template-columns:7fr 5fr }
-      .contact-grid{ grid-template-columns:1fr 1fr }
-    }
-  </style>
+/* CASOS */
+.examples{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.ex{display:flex;gap:20px;background:var(--surface);border-radius:var(--r-lg);padding:28px;border:1px solid var(--line-2);box-shadow:var(--sh-sm);transition:border-color .25s,box-shadow .25s}
+.ex:hover{border-color:var(--violet-200);box-shadow:var(--sh)}
+.ex .ic{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex:none;background:linear-gradient(140deg,var(--violet-100),var(--violet-050));color:var(--violet-600)}
+.ex .ic svg{width:23px;height:23px}
+.ex .kicker{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--coral-600);margin-bottom:5px}
+.ex h3{font-family:var(--font-display);font-size:18.5px;font-weight:600;margin-bottom:8px;line-height:1.2}
+.ex p{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.more-head{font-family:var(--font-display);font-size:20px;font-weight:600;margin:56px 0 22px}
+
+/* caso de éxito */
+.case{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:56px;align-items:center;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-2xl);padding:40px 48px;box-shadow:var(--sh)}
+.case-media{position:relative;border-radius:var(--r-xl);overflow:hidden;background:var(--violet-900);aspect-ratio:9/16;box-shadow:var(--sh-lg)}
+.case-media video{display:block;width:100%;height:100%;object-fit:cover}
+.case-tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--violet-600);background:var(--violet-050);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+.case-tag svg{width:15px;height:15px}
+.case-title{font-family:var(--font-display);font-size:26px;font-weight:600;line-height:1.2;color:var(--ink);margin-bottom:26px}
+.case-steps{display:flex;flex-direction:column;gap:22px;margin-bottom:30px}
+.case-step{display:flex;gap:16px;align-items:flex-start}
+.case-step .ic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;background:linear-gradient(140deg,var(--violet-100),var(--violet-050));color:var(--violet-600)}
+.case-step:nth-child(3) .ic{background:var(--coral-100);color:var(--coral-700)}
+.case-step .ic svg{width:21px;height:21px}
+.case-step h3{font-family:var(--font-display);font-size:17px;font-weight:600;margin-bottom:6px}
+.case-step p{font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.case-step ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-2);line-height:1.6}
+.case-btns{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:920px){
+  .case{grid-template-columns:1fr;gap:36px;padding:32px 28px}
+  .case-media{max-width:320px;width:100%;margin:0 auto}
+}
+@media(max-width:620px){
+  .case{padding:24px 18px}
+  .case-title{font-size:22px}
+  .case-btns .at-btn{width:100%;justify-content:center}
+}
+
+/* CURSO */
+.course{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-2xl);padding:52px 56px;box-shadow:var(--sh);display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative;overflow:hidden}
+.course::after{content:"";position:absolute;bottom:-140px;right:-100px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,var(--coral-100),transparent 65%);opacity:.7;z-index:0}
+.course-text{position:relative;z-index:1}
+.course-text h2{font-family:var(--font-display);font-weight:600;font-size:var(--t-h2);line-height:1.12;letter-spacing:var(--tracking-tight);margin:14px 0 16px}
+.course-text h2 em{font-style:italic;color:var(--coral-600)}
+.course-text p{font-size:16.5px;color:var(--ink-2);line-height:1.6;margin-bottom:24px;max-width:46ch}
+.course-list{position:relative;z-index:1;display:flex;flex-direction:column;gap:14px}
+.course-list li{list-style:none;display:flex;gap:13px;align-items:flex-start;font-size:15.5px;color:var(--ink-2);line-height:1.5}
+.course-list .tick{width:26px;height:26px;border-radius:9px;background:var(--violet-050);color:var(--violet-600);display:flex;align-items:center;justify-content:center;flex:none}
+.course-list .tick svg{width:15px;height:15px}
+
+/* QUIÉN SOY */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}
+.about-art{position:relative;aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-lg);background:linear-gradient(160deg,var(--violet-100),var(--coral-100))}
+.about-art img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.about .sig{position:absolute;bottom:18px;left:18px;background:var(--surface);border-radius:14px;padding:11px 16px;box-shadow:var(--sh);font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--ink)}
+.about .sig span{display:block;font-family:var(--font-body);font-weight:500;font-size:12px;color:var(--ink-3)}
+.about-text h2{font-family:var(--font-display);font-weight:600;font-size:var(--t-h2);letter-spacing:var(--tracking-tight);margin:14px 0 18px;line-height:1.12}
+.about-text h2 em{font-style:italic;color:var(--violet-500)}
+.about-text p{font-size:16.5px;color:var(--ink-2);line-height:1.65;margin-bottom:22px;max-width:54ch}
+.about-list{display:flex;flex-direction:column;gap:14px}
+.about-list li{list-style:none;display:flex;gap:13px;align-items:flex-start;font-size:15px;color:var(--ink-2);line-height:1.5}
+.about-list .tick{width:24px;height:24px;border-radius:8px;background:var(--coral-100);color:var(--coral-700);display:flex;align-items:center;justify-content:center;flex:none}
+.about-list .tick svg{width:14px;height:14px}
+
+/* CONFIANZA */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tcard{padding:26px 22px;border-radius:var(--r-lg);background:var(--surface-2);border:1px solid var(--line-2)}
+.tcard .ic{width:42px;height:42px;border-radius:12px;background:var(--surface);box-shadow:var(--sh-sm);display:flex;align-items:center;justify-content:center;color:var(--violet-500);margin-bottom:16px}
+.tcard .ic svg{width:21px;height:21px}
+.tcard h4{font-family:var(--font-display);font-size:17px;font-weight:600;margin-bottom:8px}
+.tcard p{font-size:14px;color:var(--ink-2);line-height:1.5}
+
+/* OPINIONES / TESTIMONIOS */
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.voice{display:flex;flex-direction:column;background:var(--surface);border-radius:var(--r-lg);padding:30px;border:1px solid var(--line-2);box-shadow:var(--sh-sm);transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.voice:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.voice .quote-mark{font-family:var(--font-display);font-size:46px;line-height:.6;color:var(--coral-300);height:26px}
+.voice .stars{display:flex;gap:3px;margin:6px 0 14px}
+.voice .stars svg{width:16px;height:16px;color:var(--coral-500);fill:var(--coral-500)}
+.voice blockquote{font-size:16px;color:var(--ink);line-height:1.6;margin:0 0 22px;font-weight:500}
+.voice .person{display:flex;align-items:center;gap:13px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line-2)}
+.voice .avatar{width:46px;height:46px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;font-size:16px;color:#fff;background:linear-gradient(135deg,var(--violet-400),var(--coral-500))}
+.voice .person b{font-family:var(--font-display);font-size:15.5px;font-weight:600;color:var(--ink);display:block;line-height:1.2}
+.voice .person span{font-size:13px;color:var(--ink-3)}
+
+/* CONTACTO (banda violeta + calendario incrustado) */
+.contact{background:linear-gradient(135deg,var(--violet-600),var(--violet-800));border-radius:var(--r-2xl);padding:56px;position:relative;overflow:hidden}
+.contact::before,.contact::after{content:"";position:absolute;border-radius:50%;filter:blur(2px)}
+.contact::before{width:300px;height:300px;background:radial-gradient(circle,rgba(239,154,130,.5),transparent 60%);top:-100px;left:-60px}
+.contact::after{width:340px;height:340px;background:radial-gradient(circle,rgba(142,107,230,.55),transparent 62%);bottom:-130px;right:-60px}
+.contact-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center}
+.rad-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:52px 56px}
+.contact .at-chip{background:rgba(255,255,255,.16);color:#fff;margin-bottom:18px}
+.contact h2{font-family:var(--font-display);font-weight:600;font-size:var(--t-h2);color:#fff;line-height:1.1;letter-spacing:var(--tracking-tight);margin-bottom:14px}
+.contact h2 em{font-style:italic;color:var(--coral-300)}
+.contact p{font-size:16.5px;color:var(--violet-100);margin-bottom:24px;line-height:1.55}
+.contact-links{display:flex;flex-direction:column;gap:10px}
+.contact-links a{display:inline-flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-size:15px;font-weight:500;width:fit-content}
+.contact-links a svg{width:18px;height:18px;color:var(--coral-300)}
+.contact-links a:hover{color:var(--coral-300)}
+.cal-card{background:var(--surface);border-radius:var(--r-xl);padding:8px;box-shadow:var(--sh-lg);overflow:hidden}
+.cal-card iframe{width:100%;height:640px;border:0;border-radius:18px;display:block}
+
+/* FOOTER */
+footer{padding:58px 0 34px}
+.foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.foot-brand{max-width:320px}
+.foot-brand .brand{margin-bottom:14px}
+.foot-brand p{font-size:14px;color:var(--ink-3);line-height:1.5}
+.foot-col h5{font-family:var(--font-display);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:14px}
+.foot-col a{display:block;font-size:14.5px;color:var(--ink-2);text-decoration:none;margin-bottom:9px;transition:color .2s}
+.foot-col a:hover{color:var(--violet-500)}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;padding-top:22px;flex-wrap:wrap;gap:12px}
+.foot-bot span{font-size:13px;color:var(--ink-3)}
+.foot-bot a{color:var(--ink-3);text-decoration:none}
+
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-art{max-width:380px;margin:0 auto}
+  .services,.benefits,.steps,.trust-grid,.examples,.voices{grid-template-columns:1fr 1fr}
+  .course{grid-template-columns:1fr;gap:30px;padding:44px 34px}
+  .rad-grid{grid-template-columns:1fr;gap:30px;padding:44px 34px}
+  .about{grid-template-columns:1fr;gap:36px}
+  .about-art{max-width:380px}
+  .contact-grid{grid-template-columns:1fr;gap:30px}
+  .nav-links{display:none}
+  .proceso,.contact{padding:44px 30px}
+}
+@media(max-width:620px){
+  .services,.benefits,.steps,.trust-grid,.examples,.voices{grid-template-columns:1fr}
+  .float.f1{left:-10px}.float.f2{right:-8px}
+  .cal-card iframe{height:580px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+  .reveal.in{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="brand-mark"></div>
-        <div class="brand-text">
-          <div class="brand-name">Araceli Teruel</div>
-          <div class="brand-tag">Procesos inteligentes, humanos y eficientes</div>
+
+<header class="nav">
+  <div class="shell nav-in">
+    <a class="brand" href="#top"><img src="assets/logo-symbol-violet.png" alt="Araceli Teruel"><b>Araceli Teruel</b></a>
+    <nav class="nav-links">
+      <a href="#servicios">Lo que hago</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a href="#casos">Casos reales</a>
+      <a href="#curso">Formación</a>
+      <a href="#quien-soy">Quién soy</a>
+    </nav>
+    <a href="#contacto" class="at-btn at-btn--primary">Reserva tu llamada</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-text">
+        <span class="hero-eyebrow at-overline"><span class="dot"></span>Mejora de procesos para pymes</span>
+        <h1>Ordeno los procesos de tu negocio para que dejen de <em>frenarte</em></h1>
+        <p class="lead">Primero entiendo cómo funciona tu empresa de verdad y dónde se pierde el tiempo. Luego ordeno y mejoro esos procesos y los automatizo con IA donde de verdad aporta. Sin tecnicismos, con acompañamiento real.</p>
+        <div class="hero-cta">
+          <a href="#contacto" class="at-btn at-btn--primary">Reserva tu llamada gratuita</a>
+          <a href="#servicios" class="at-btn at-btn--outline">Ver lo que hago</a>
+        </div>
+        <div class="hero-trust">
+          <div class="av"><span></span><span></span><span></span></div>
+          <small><b>+10 años</b> ordenando procesos y aplicando IA<br>en logística, retail, educación y administración.</small>
         </div>
       </div>
-      <nav class="nav">
-        <a href="#servicios">Servicios</a>
+      <div class="hero-art">
+        <div class="blob-bg"></div>
+        <div class="portrait-frame">
+          <img src="hero3.png" alt="Retrato de Araceli Teruel">
+        </div>
+        <div class="float f1">
+          <div class="ic" style="background:var(--violet-050)"><svg data-lucide="clock" style="color:var(--violet-500)"></svg></div>
+          <div><b>−40%</b><span>tiempo en tareas</span></div>
+        </div>
+        <div class="float f2">
+          <div class="ic" style="background:var(--coral-100)"><svg data-lucide="route" style="color:var(--coral-700)"></svg></div>
+          <div><b>Procesos</b><span>claros y medibles</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTORS -->
+  <section class="sectors">
+    <div class="shell">
+      <div class="sectors-in">
+        <span>Experiencia en</span>
+        <b>Logística</b><b>Retail</b><b>Educación</b><b>Administración</b><b>Asesorías</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="sec" id="servicios">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="at-overline">Lo que hago</span>
+        <h2>Primero ordeno, luego <em>automatizo</em></h2>
+        <p>Muchas empresas no necesitan "más IA": necesitan procesos claros. Empiezo por ahí y, cuando el proceso está bien definido, lo hago funcionar solo. Cuatro formas de trabajar conmigo.</p>
+      </div>
+      <div class="services">
+        <div class="svc reveal">
+          <span class="num">01</span>
+          <div class="ic"><svg data-lucide="workflow"></svg></div>
+          <h3>Diagnóstico y mejora de procesos</h3>
+          <p>El punto de partida. Entiendo cómo funciona tu empresa de verdad, pongo orden donde hay caos y defino procesos claros. Muchas veces aquí ya recuperas horas, sin tecnología de por medio.</p>
+          <div class="tag"><svg data-lucide="check"></svg>Ideal si sientes que todo depende de la cabeza de alguien</div>
+        </div>
+        <div class="svc reveal">
+          <span class="num">02</span>
+          <div class="ic"><svg data-lucide="bot"></svg></div>
+          <h3>Automatización y agentes de IA</h3>
+          <p>Cuando el proceso ya está claro, lo hago funcionar solo: informes que se envían, datos que se cruzan, asistentes que leen un documento, lo clasifican y dejan el borrador listo para revisar.</p>
+          <div class="tag"><svg data-lucide="check"></svg>Ideal cuando una tarea clara se repite una y otra vez</div>
+        </div>
+        <div class="svc reveal">
+          <span class="num">03</span>
+          <div class="ic"><svg data-lucide="graduation-cap"></svg></div>
+          <h3>Formación para tu equipo</h3>
+          <p>Con el curso <strong>De copiar a delegar</strong> enseño a tu equipo a apoyarse en la IA con criterio: qué delegar, cómo pedirlo y cómo revisarlo. Para que la mejora no dependa solo de mí.</p>
+          <div class="tag"><svg data-lucide="check"></svg>Ideal si quieres autonomía, no dependencia</div>
+        </div>
+        <div class="svc reveal">
+          <span class="num">04</span>
+          <div class="ic"><svg data-lucide="layout-template"></svg></div>
+          <h3>Productos y software propio</h3>
+          <p>Cuando la herramienta que necesitas no existe, la construyo. Diseño y desarrollo software a medida para un sector concreto, de la idea al producto en uso, como hago con mis propias apps.</p>
+          <div class="tag"><svg data-lucide="check"></svg>Ideal para una necesidad que ningún programa cubre</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="sec" id="beneficios" style="padding-top:20px">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="at-overline">Lo que ganas</span>
+        <h2>Resultados <em>claros</em>, desde el primer día</h2>
+        <p>Nada de promesas vagas. Cada proyecto deja resultados visibles que puedes medir y defender ante tu equipo.</p>
+      </div>
+      <div class="benefits">
+        <div class="benefit reveal">
+          <div class="ic"><svg data-lucide="timer"></svg></div>
+          <h3>Recuperas tiempo</h3>
+          <p>Las tareas repetitivas se hacen solas y tu equipo se dedica a lo que de verdad aporta.</p>
+        </div>
+        <div class="benefit reveal">
+          <div class="ic"><svg data-lucide="shield-check"></svg></div>
+          <h3>Menos errores</h3>
+          <p>Procesos estandarizados y datos más fiables para decidir con seguridad y sin sustos.</p>
+        </div>
+        <div class="benefit reveal">
+          <div class="ic"><svg data-lucide="bar-chart-3"></svg></div>
+          <h3>Todo medible</h3>
+          <p>Indicadores claros para ver el impacto real y priorizar los siguientes pasos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="sec" id="proceso" style="padding-top:20px">
+    <div class="shell">
+      <div class="proceso reveal">
+        <div class="sec-head">
+          <span class="at-overline" style="color:var(--coral-500)">Cómo trabajamos juntos</span>
+          <h2>Un camino <em>paso a paso</em>, con entregables en cada fase</h2>
+          <p>Para que veas resultados desde el principio, no al final. Sin contratos eternos ni cajas negras.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="n">FASE 0</div>
+            <h4>Diagnóstico</h4>
+            <p>Te escucho y entiendo tu negocio. Miramos juntos dónde se va el tiempo.</p>
+            <div class="deliver"><svg data-lucide="check"></svg>Mapa de procesos y puntos de mejora</div>
+          </div>
+          <div class="step">
+            <div class="n">FASE 1</div>
+            <h4>Oportunidades</h4>
+            <p>Priorizo las acciones por impacto real, no por lo que suene más moderno.</p>
+            <div class="deliver"><svg data-lucide="check"></svg>Listado con impacto esperado</div>
+          </div>
+          <div class="step">
+            <div class="n">FASE 2</div>
+            <h4>Piloto rápido</h4>
+            <p>Construyo un caso real que puedas probar en semanas y tocar con las manos.</p>
+            <div class="deliver"><svg data-lucide="check"></svg>Prototipo funcionando y evaluado</div>
+          </div>
+          <div class="step">
+            <div class="n">FASE 3</div>
+            <h4>Escalado</h4>
+            <p>Lo despliego y formo a tu equipo para que funcione sin depender de mí.</p>
+            <div class="deliver"><svg data-lucide="check"></svg>Roadmap con indicadores</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS -->
+  <section class="sec" id="casos">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="at-overline">Casos reales</span>
+        <h2>Cosas que ya he <em>construido</em></h2>
+        <p>Empiezo por un caso con nombre. El resto los cuento sin nombres, por discreción con quienes trabajan conmigo.</p>
+      </div>
+
+      <div class="case reveal" id="caso-laura">
+        <div class="case-media">
+          <video id="caseVideo" src="assets/caso-laura-sentium.mp4" poster="assets/caso-laura-sentium.webp"
+            muted loop playsinline preload="metadata" width="720" height="1280"
+            aria-label="Vídeo de la web de Laura Sentium en un móvil"></video>
+        </div>
+        <div>
+          <span class="case-tag"><svg data-lucide="sparkles"></svg>Estética y medicina estética · Valencia</span>
+          <h3 class="case-title">Laura Sentium: de pedir cita por teléfono a reservar desde el móvil</h3>
+          <div class="case-steps">
+            <div class="case-step">
+              <div class="ic"><svg data-lucide="circle-alert"></svg></div>
+              <div><h3>El punto de partida</h3><p>La web no permitía reservar online, y los precios y tratamientos eran difíciles de mantener al día.</p></div>
+            </div>
+            <div class="case-step">
+              <div class="ic"><svg data-lucide="wrench"></svg></div>
+              <div><h3>Lo que hicimos</h3>
+                <ul>
+                  <li>Puesta a punto y seguridad de la web.</li>
+                  <li>Reservas online con una señal de 10 € con tarjeta, para reducir las citas que no se presentan.</li>
+                  <li>Rediseño y nueva sección de medicina estética.</li>
+                  <li>Formación para que ella misma actualice sus precios.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="case-step">
+              <div class="ic"><svg data-lucide="check"></svg></div>
+              <div><h3>El resultado</h3><p>Sus clientas eligen tratamiento, día y hora, y pagan la señal desde el móvil, sin llamar ni escribir por WhatsApp.</p></div>
+            </div>
+          </div>
+          <div class="case-btns">
+            <a href="https://laurasentium.es" target="_blank" rel="noopener" class="at-btn at-btn--outline">Ver la web de Laura Sentium</a>
+            <a href="#contacto" class="at-btn at-btn--primary">Reserva tu hueco</a>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="more-head reveal">Más cosas que ya funcionan o están en marcha</h3>
+      <div class="examples">
+        <div class="ex reveal">
+          <div class="ic"><svg data-lucide="graduation-cap"></svg></div>
+          <div>
+            <div class="kicker">Producto propio · Formación</div>
+            <h3>App de repaso para un grupo de 25 alumnos</h3>
+            <p>Convierte clases grabadas en un reto diario de preguntas, con rachas y clasificación. Cada respuesta enseña la frase del material que la justifica. Se instala en el móvil y vive en un servidor propio. La misma idea sirve para formar a la gente nueva de un equipo.</p>
+          </div>
+        </div>
+        <div class="ex reveal">
+          <div class="ic"><svg data-lucide="receipt-text"></svg></div>
+          <div>
+            <div class="kicker">Grupo empresarial · Administración</div>
+            <h3>Facturas, gastos y cobros sin teclear</h3>
+            <p>Siete automatismos sobre su programa de gestión: tickets de gasto, facturas que llegan por correo y se leen solas, contabilización, remesas bancarias y cuadros de mando. Reglas claras primero, IA solo donde aporta y una persona que revisa antes de dar nada por bueno.</p>
+          </div>
+        </div>
+        <div class="ex reveal">
+          <div class="ic"><svg data-lucide="file-pen-line"></svg></div>
+          <div>
+            <div class="kicker">Despachos profesionales · Varios clientes</div>
+            <h3>Un asistente para el trabajo del despacho</h3>
+            <p>Lee la notificación de Hacienda, deja listo el borrador del recurso o de la carta y lo traduce a un correo que el cliente entiende. Nada sale sin vuestro visto bueno, pero ya no se parte de cero. En marcha en varios despachos.</p>
+          </div>
+        </div>
+        <div class="ex reveal">
+          <div class="ic"><svg data-lucide="file-spreadsheet"></svg></div>
+          <div>
+            <div class="kicker">Grupo de empresas · Contabilidad</div>
+            <h3>Cierre contable mensual en un clic</h3>
+            <p>Reparte el diario contable por centro o sociedad y genera el panel del mes y el Excel detallado solo. Menos Excel a mano, más decisiones.</p>
+          </div>
+        </div>
+        <div class="ex reveal">
+          <div class="ic"><svg data-lucide="kanban"></svg></div>
+          <div>
+            <div class="kicker">Gestión de proyectos</div>
+            <h3>Seguimiento de proyectos sin fricción</h3>
+            <p>Revisa correo, archivos y tablero, detecta novedades y mantiene el estado del proyecto al día. Llegas a cada reunión sabiendo exactamente cómo va todo.</p>
+          </div>
+        </div>
+        <div class="ex reveal">
+          <div class="ic"><svg data-lucide="smartphone"></svg></div>
+          <div>
+            <div class="kicker">Producto propio · Software vertical</div>
+            <h3>Una app completa para un sector</h3>
+            <p>De la idea al producto en uso: app, panel de gestión y web para una necesidad que ningún programa del mercado cubría. Cuando no existe, lo construyo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES / TESTIMONIOS -->
+  <!-- Sustituye el texto, el nombre, el cargo y las iniciales del avatar por testimonios reales de tus clientes. Puedes añadir o quitar tarjetas .voice. -->
+  <section class="sec" id="opiniones" style="padding-top:20px;display:none">
+    <div class="shell">
+      <div class="sec-head center reveal">
+        <span class="at-overline">Opiniones</span>
+        <h2>Lo que dicen quienes ya <em>trabajan</em> conmigo</h2>
+        <p>La mejor forma de saber cómo trabajo es escuchar a quienes ya lo han vivido.</p>
+      </div>
+      <div class="voices">
+        <div class="voice reveal">
+          <div class="quote-mark">&ldquo;</div>
+          <div class="stars"><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg></div>
+          <blockquote>Recuperamos varias horas a la semana en tareas que antes hacíamos a mano. Araceli lo explica todo con una claridad que se agradece, sin tecnicismos.</blockquote>
+          <div class="person">
+            <div class="avatar">NA</div>
+            <div><b>Nombre Apellido</b><span>Cargo · Empresa</span></div>
+          </div>
+        </div>
+        <div class="voice reveal">
+          <div class="quote-mark">&ldquo;</div>
+          <div class="stars"><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg></div>
+          <blockquote>Pensábamos que la IA no era para una empresa como la nuestra. En semanas teníamos un piloto funcionando y resultados que pudimos medir. Un acierto.</blockquote>
+          <div class="person">
+            <div class="avatar">NA</div>
+            <div><b>Nombre Apellido</b><span>Cargo · Empresa</span></div>
+          </div>
+        </div>
+        <div class="voice reveal">
+          <div class="quote-mark">&ldquo;</div>
+          <div class="stars"><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg><svg data-lucide="star"></svg></div>
+          <blockquote>Lo que más valoro es el acompañamiento. No te deja un programa y se va: forma al equipo y se asegura de que todo funcione sin depender de ella.</blockquote>
+          <div class="person">
+            <div class="avatar">NA</div>
+            <div><b>Nombre Apellido</b><span>Cargo · Empresa</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURSO -->
+  <section class="sec" id="curso" style="padding-top:20px">
+    <div class="shell">
+      <div class="course reveal">
+        <div class="course-text">
+          <span class="at-overline" style="color:var(--coral-600)">Formación · De copiar a delegar</span>
+          <h2>Enseño a tu equipo a <em>delegar</em> en la IA</h2>
+          <p>La mejora no debería depender solo de mí. En este curso aprendéis a apoyaros en la IA del día a día con criterio: qué tareas delegar, cómo pedirlas bien y cómo revisar lo que devuelve. Pasas de copiar y pegar a delegar de verdad.</p>
+          <a href="#contacto" class="at-btn at-btn--coral">Quiero saber más</a>
+        </div>
+        <ul class="course-list">
+          <li><span class="tick"><svg data-lucide="check"></svg></span>Práctico y con tus propias tareas, no teoría genérica.</li>
+          <li><span class="tick"><svg data-lucide="check"></svg></span>Para personas sin perfil técnico, explicado sin tecnicismos.</li>
+          <li><span class="tick"><svg data-lucide="check"></svg></span>Tu equipo gana autonomía y deja de depender de un experto.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉN SOY -->
+  <section class="sec" id="quien-soy">
+    <div class="shell about">
+      <div class="about-art reveal">
+        <img src="hero.png" alt="Araceli Teruel, matemática y desarrolladora">
+        <div class="sig">Araceli Teruel<span>Matemática &amp; desarrolladora</span></div>
+      </div>
+      <div class="about-text reveal">
+        <span class="at-overline">Quién soy</span>
+        <h2>Tecnología al servicio de las <em>personas</em>, no al revés</h2>
+        <p>Soy Araceli Teruel, matemática y desarrolladora. Llevo más de 10 años ayudando a equipos a organizarse mejor y a que la tecnología trabaje a su favor. Lo mío es entender cómo funciona tu negocio por dentro, ordenar los procesos y —cuando aporta— automatizarlos. No solo lo pienso: lo construyo.</p>
+        <ul class="about-list">
+          <li><span class="tick"><svg data-lucide="check"></svg></span>De la idea al producto funcionando: yo me encargo de todo el camino.</li>
+          <li><span class="tick"><svg data-lucide="check"></svg></span>Tecnología explicada sin tecnicismos, hablando de lo que ganas.</li>
+          <li><span class="tick"><svg data-lucide="check"></svg></span>Acompañamiento humano: procesos claros y formación práctica.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANZA -->
+  <section class="sec" id="confianza" style="padding-top:20px">
+    <div class="shell">
+      <div class="sec-head center reveal">
+        <span class="at-overline">Por qué confiar en mí</span>
+        <h2>Técnica de verdad, trato <em>cercano</em></h2>
+      </div>
+      <div class="trust-grid">
+        <div class="tcard reveal"><div class="ic"><svg data-lucide="braces"></svg></div><h4>Construyo, no solo asesoro</h4><p>Programo de verdad: automatizaciones, agentes y software a medida que funcionan en producción.</p></div>
+        <div class="tcard reveal"><div class="ic"><svg data-lucide="layers"></svg></div><h4>Sectores diversos</h4><p>Logística, retail, educación y administración. Conozco el papeleo y el día a día de cada uno.</p></div>
+        <div class="tcard reveal"><div class="ic"><svg data-lucide="route"></svg></div><h4>Metodología clara</h4><p>Diagnóstico, oportunidades, piloto y escalado. Siempre con entregables y sin cajas negras.</p></div>
+        <div class="tcard reveal"><div class="ic"><svg data-lucide="heart-handshake"></svg></div><h4>Personas primero</h4><p>Transparencia, cercanía y orientación a resultados. La IA está para ayudaros, no para sustituiros.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RADIOGRAFÍA -->
+  <section class="sec" id="radiografia" style="padding-top:20px">
+    <div class="shell">
+      <div class="rad-grid reveal" style="background:linear-gradient(160deg,var(--violet-050),var(--coral-100));border:1px solid var(--line-2);border-radius:var(--r-2xl)">
+        <div>
+          <span class="at-overline" style="color:var(--coral-700)">Tu primer paso</span>
+          <h2 style="font-family:var(--font-display);font-weight:600;font-size:var(--t-h2);letter-spacing:-.01em;margin:10px 0 14px">Empieza con una <em style="font-style:italic;color:var(--violet-500)">Radiografía de procesos</em></h2>
+          <p style="color:var(--ink-2);font-size:17px;line-height:1.6;margin-bottom:24px">En una o dos semanas te entrego un mapa claro de tus procesos y de dónde se te escapa el tiempo, con un plan de por dónde empezar. Porque antes de automatizar nada, hay que ver dónde se atasca de verdad.</p>
+          <a href="#contacto" class="at-btn at-btn--primary">Reserva tu llamada gratuita</a>
+        </div>
+        <div style="background:var(--surface);border-radius:var(--r-xl);padding:30px 32px;box-shadow:var(--sh)">
+          <div style="font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--violet-700);margin-bottom:18px">Qué te llevas</div>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:15px;color:var(--ink-2);font-size:15px;line-height:1.4"><svg data-lucide="check" style="color:var(--coral-700);width:20px;height:20px;flex:0 0 auto;margin-top:2px"></svg><span>Un mapa de tus procesos clave, de principio a fin.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:15px;color:var(--ink-2);font-size:15px;line-height:1.4"><svg data-lucide="check" style="color:var(--coral-700);width:20px;height:20px;flex:0 0 auto;margin-top:2px"></svg><span>Los puntos donde se pierde el tiempo: esperas, copia-pega, errores.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:15px;color:var(--ink-2);font-size:15px;line-height:1.4"><svg data-lucide="check" style="color:var(--coral-700);width:20px;height:20px;flex:0 0 auto;margin-top:2px"></svg><span>Un plan priorizado: qué ordenar primero por impacto y esfuerzo.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;color:var(--ink-2);font-size:15px;line-height:1.4"><svg data-lucide="check" style="color:var(--coral-700);width:20px;height:20px;flex:0 0 auto;margin-top:2px"></svg><span>Claridad para decidir, sigas conmigo o por tu cuenta.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="sec" id="contacto" style="padding-top:20px">
+    <div class="shell">
+      <div class="contact reveal">
+        <div class="contact-grid">
+          <div class="contact-text">
+            <span class="at-chip">Empecemos</span>
+            <h2>Primera llamada <em>gratuita</em></h2>
+            <p>20–30 minutos para conocernos y entender tu situación. Te digo con sinceridad si puedo ayudarte y por dónde empezaría. Sin compromiso y sin tecnicismos. Elige tu hueco en el calendario.</p>
+            <div class="contact-links">
+              <a href="mailto:info@araceliteruel.es"><svg data-lucide="mail"></svg>info@araceliteruel.es</a>
+              <a href="https://www.linkedin.com/in/araceli-teruel/"><svg data-lucide="linkedin"></svg>LinkedIn</a>
+            </div>
+          </div>
+          <div class="cal-card">
+            <iframe src="https://calendly.com/araceliteruel/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1" title="Reserva una llamada con Araceli Teruel" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="shell">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><img src="assets/logo-symbol-violet.png" alt=""><b>Araceli Teruel</b></a>
+        <p>Mejora de procesos para pymes — y automatización con IA cuando de verdad aporta. Menos caos, menos errores, más tiempo.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Navegación</h5>
+        <a href="#servicios">Lo que hago</a>
+        <a href="#proceso">Cómo trabajo</a>
+        <a href="#casos">Casos reales</a>
+        <a href="#curso">Formación</a>
         <a href="#quien-soy">Quién soy</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <a href="#contacto" class="btn btn-rose">Reserva tu hueco</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contacto</h5>
+        <a href="mailto:info@araceliteruel.es">info@araceliteruel.es</a>
+        <a href="https://www.linkedin.com/in/araceli-teruel/">LinkedIn</a>
+        <a href="#contacto">Reserva una llamada</a>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <!-- Imagen primero en móvil -->
-        <div class="hero-image">
-          <figure>
-            <img src="hero.png" alt="Retrato de Araceli Teruel" />
-          </figure>
-        </div>
-        <div class="hero-copy">
-          <span class="chip"><span class="dot"></span>Diagnóstico y automatización sin complicaciones</span>
-          <h1>Procesos más ágiles, humanos y rentables con IA</h1>
-          <p>Trabajo contigo para identificar qué procesos te frenan y cómo mejorarlos con automatización práctica y resultados medibles.</p>
-          <div class="hero-cta">
-            <a href="#contacto" class="btn btn-ink">Reserva tu llamada</a>
-            <a href="#servicios" class="btn btn-outline">Ver cómo trabajo</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios" class="section">
-      <div class="container">
-        <h2 style="font-family:'Montserrat',sans-serif; font-weight:700">Mi forma de trabajar</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon" style="--c: var(--brand-sage)"></div>
-            <h3 style="font-family:'Montserrat',sans-serif; font-weight:700">Diagnóstico claro</h3>
-            <p>Hacemos una radiografía de tus procesos y priorizamos dónde vas a ganar más con IA y automatización.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" style="--c: var(--brand-rose)"></div>
-            <h3 style="font-family:'Montserrat',sans-serif; font-weight:700">Piloto rápido</h3>
-            <p>Implementamos un caso real en pocas semanas. Nada de eternas consultorías, sino resultados tangibles.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" style="--c: #d4d4d8"></div>
-            <h3 style="font-family:'Montserrat',sans-serif; font-weight:700">Escalado acompañado</h3>
-            <p>Si el piloto funciona, creamos un plan para escalar y formar al equipo, con indicadores claros.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quién soy -->
-    <section id="quien-soy" class="section section-alt">
-      <div class="container about-grid">
-        <div>
-          <h2 style="font-family:'Montserrat',sans-serif; font-weight:700">Quién soy</h2>
-          <p>Soy Araceli Teruel, matemática y desarrolladora. He pasado más de 10 años ayudando a equipos a organizarse mejor y a que la tecnología trabaje a su favor. Mi estilo es sencillo: claridad, empatía y resultados.</p>
-          <ul class="bullets">
-            <li>• Automatización con IA que ahorra tiempo sin complicar a tu equipo.</li>
-            <li>• Integraciones API y flujos serverless, explicados sin tecnicismos innecesarios.</li>
-            <li>• Acompañamiento humano: procesos claros y formación práctica.</li>
-          </ul>
-        </div>
-        <aside class="aside">
-          <div class="aside-box">
-            <div class="aside-k">Disponibilidad</div>
-            <div class="aside-v">1–2 proyectos nuevos de diagnóstico</div>
-            <p>¿Te encaja? Empezamos por un diagnóstico sencillo, sin compromisos y con valor inmediato.</p>
-            <a href="#contacto" class="btn btn-outline">Reserva tu hueco</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section">
-      <div class="container cta">
-        <div>
-          <div class="cta-title" style="font-family:'Montserrat',sans-serif; font-weight:700">¿Damos el primer paso?</div>
-          <div class="cta-sub">Una llamada de 20–30 minutos para conocernos y ver dónde tiene sentido empezar.</div>
-        </div>
-        <a href="#contacto" class="btn btn-ink">Hablemos</a>
-      </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="section section-alt">
-      <div class="container contact-grid">
-        <div>
-          <h2 style="font-family:'Montserrat',sans-serif; font-weight:700">Contacto</h2>
-          <p>Elige directamente en mi calendario el momento que mejor te vaya. Así de fácil.</p>
-          <ul class="bullets small">
-            <li><strong>Email:</strong> hola@araceliteruel.com</li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/araceliteruel" class="underline">/in/araceliteruel</a></li>
-          </ul>
-        </div>
-        <div class="calendly">
-          <iframe
-            src="https://calendly.com/araceliteruel/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1"
-            width="100%"
-            height="600"
-            frameborder="0"
-            class="cal-frame"
-            title="Calendly Araceli Teruel"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="y">2025</span> Araceli Teruel — Procesos inteligentes, humanos y eficientes</div>
-      <div><a href="#" class="underline">Política de privacidad</a></div>
+    <div class="foot-bot">
+      <span>© <span id="y">2026</span> Araceli Teruel — Procesos inteligentes, humanos y eficientes</span>
+      <span><a href="#">Política de privacidad</a></span>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    // año dinámico
-    document.getElementById('y').textContent = new Date().getFullYear();
-    // scroll suave para anclas
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      })
-    });
-  </script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+  if(window.lucide) lucide.createIcons({attrs:{'stroke-width':2}});
+  var yEl=document.getElementById('y'); if(yEl) yEl.textContent=new Date().getFullYear();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  // Vídeo del caso: solo se reproduce visible y sin preferencia de movimiento reducido
+  (function(){
+    var v=document.getElementById('caseVideo');
+    if(!v||!('IntersectionObserver' in window))return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.controls=true;return;}
+    new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){v.play().catch(function(){v.controls=true;});}else{v.pause();}
+    })},{threshold:.35}).observe(v);
+  })();
+</script>
+<script>
+(function () {
+  const CFG = {
+    webhook: "https://n8n.dabarma.synology.me/webhook/chat-agente",
+    logo: "https://araceliteruel.es/assets/logo-symbol-violet.png",
+    proactiveDelay: 9000,
+    violet: "#6A4FB5", ink: "#211A33", coral: "#EF9A82", lila: "#F5F1FA", line: "#e7dff2"
+  };
+  // id de sesión estable (para la memoria del agente)
+  let SID;
+  try { SID = sessionStorage.getItem('at_sid'); if(!SID){ SID = 'web-' + Date.now() + '-' + Math.random().toString(36).slice(2,8); sessionStorage.setItem('at_sid', SID); } }
+  catch(e){ SID = 'web-' + Date.now() + '-' + Math.random().toString(36).slice(2,8); }
+
+  const css = `
+  #at-launch{position:fixed;right:22px;bottom:22px;z-index:99999;display:flex;align-items:center;gap:10px;
+    background:${CFG.violet};color:#fff;border:none;border-radius:999px;padding:13px 20px;cursor:pointer;
+    font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;font-size:15px;
+    box-shadow:0 14px 34px -12px rgba(106,79,181,.7)}
+  #at-launch svg{width:20px;height:20px}
+  #at-panel{position:fixed;right:22px;bottom:22px;z-index:99999;width:390px;max-width:calc(100vw - 24px);
+    height:600px;max-height:calc(100vh - 40px);background:#fff;border:1px solid ${CFG.line};border-radius:22px;
+    box-shadow:0 24px 60px -20px rgba(33,26,51,.5);display:none;flex-direction:column;overflow:hidden;
+    font-family:'Hanken Grotesk',system-ui,sans-serif}
+  #at-panel.open{display:flex}
+  .at-h{display:flex;align-items:center;gap:11px;padding:15px 16px;color:#fff;
+    background:linear-gradient(120deg,${CFG.ink},${CFG.violet})}
+  .at-h img{width:32px;height:32px;border-radius:8px;background:#fff;padding:5px;object-fit:contain}
+  .at-h .n{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;font-size:15px;line-height:1.1}
+  .at-h .s{font-size:11.5px;opacity:.85;margin-top:2px}
+  .at-h .x{margin-left:auto;background:none;border:none;color:#fff;font-size:20px;cursor:pointer;opacity:.85}
+  .at-book{background:${CFG.coral};color:${CFG.ink};border:none;padding:9px;font-weight:600;cursor:pointer;
+    font-family:'Hanken Grotesk',sans-serif;font-size:13.5px}
+  .at-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,#fbf9ff,#fff)}
+  .at-msg{max-width:82%;padding:10px 13px;font-size:14px;line-height:1.45;border-radius:15px;white-space:pre-wrap}
+  .at-bot{align-self:flex-start;background:${CFG.lila};border:1px solid ${CFG.line};border-bottom-left-radius:5px}
+  .at-me{align-self:flex-end;background:${CFG.violet};color:#fff;border-bottom-right-radius:5px}
+  .at-type{align-self:flex-start;background:${CFG.lila};border:1px solid ${CFG.line};border-radius:15px;padding:11px 15px}
+  .at-type i{display:inline-block;width:6px;height:6px;margin:0 1.5px;border-radius:50%;background:#a996d6;animation:atb 1s infinite}
+  .at-type i:nth-child(2){animation-delay:.15s}.at-type i:nth-child(3){animation-delay:.3s}
+  @keyframes atb{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+  .at-foot{display:flex;gap:8px;padding:11px;border-top:1px solid ${CFG.line};background:#fff}
+  .at-foot input{flex:1;border:1px solid ${CFG.line};border-radius:999px;padding:10px 14px;font-family:inherit;font-size:14px;outline:none}
+  .at-foot input:focus{border-color:${CFG.violet}}
+  .at-foot button{border:none;background:${CFG.violet};color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:15px;flex:none}
+  `;
+  const style = document.createElement('style'); style.textContent = css; document.head.appendChild(style);
+  const font = document.createElement('link'); font.rel='stylesheet';
+  font.href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap';
+  document.head.appendChild(font);
+
+  const launch = document.createElement('button');
+  launch.id='at-launch';
+  launch.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Habla con nosotros';
+  document.body.appendChild(launch);
+
+  const panel = document.createElement('div');
+  panel.id='at-panel';
+  panel.innerHTML = `
+    <div class="at-h">
+      <img src="${CFG.logo}" alt="" onerror="this.style.display='none'">
+      <div><div class="n">Asistente de Araceli</div><div class="s">Responde al momento</div></div>
+      <button class="x" aria-label="Cerrar">&times;</button>
+    </div>
+    <button class="at-book">Reservar llamada gratuita</button>
+    <div class="at-body" id="at-body"></div>
+    <div class="at-foot">
+      <input id="at-input" placeholder="Escribe tu mensaje..." autocomplete="off">
+      <button id="at-send" aria-label="Enviar">&rarr;</button>
+    </div>`;
+  document.body.appendChild(panel);
+
+  const body = panel.querySelector('#at-body');
+  const input = panel.querySelector('#at-input');
+  function add(cls, txt){ const d=document.createElement('div'); d.className='at-msg '+cls; d.textContent=txt; body.appendChild(d); body.scrollTop=body.scrollHeight; return d; }
+  function typing(){ const d=document.createElement('div'); d.className='at-type'; d.innerHTML='<i></i><i></i><i></i>'; body.appendChild(d); body.scrollTop=body.scrollHeight; return d; }
+
+  let greeted=false;
+  function open(proactive){
+    panel.classList.add('open'); launch.style.display='none';
+    if(!greeted){ greeted=true;
+      add('at-bot', proactive
+        ? 'Hola, soy el asistente de Araceli. ¿Quieres que te diga por dónde podrías ordenar y automatizar los procesos de tu empresa? Cuéntame a qué os dedicáis.'
+        : 'Hola, soy el asistente de Araceli. Ayudo a pymes a ordenar sus procesos y automatizar con IA lo que de verdad aporta. ¿Qué te trae por aquí?');
+    }
+    if(!proactive) input.focus();
+  }
+  function close(){ panel.classList.remove('open'); launch.style.display='flex'; }
+  launch.onclick=function(){ open(false); };
+  panel.querySelector('.x').onclick=close;
+
+  try{
+    if(!sessionStorage.getItem('at_greeted')){
+      setTimeout(function(){ if(!panel.classList.contains('open')) open(true); try{ sessionStorage.setItem('at_greeted','1'); }catch(e){} }, CFG.proactiveDelay);
+    }
+  }catch(e){}
+
+  let busy=false;
+  async function sendText(text){
+    if(busy || !text) return; busy=true;
+    add('at-me', text);
+    const t=typing();
+    try{
+      const r=await fetch(CFG.webhook,{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({ message:text, sessionId:SID })});
+      const data=await r.json(); t.remove();
+      add('at-bot', data.reply || 'Perdona, ahora no puedo responder. Escríbeme a info@araceliteruel.es.');
+    }catch(e){ t.remove(); add('at-bot','Ha habido un problema de conexión. Puedes escribir a info@araceliteruel.es.'); }
+    busy=false;
+  }
+  function send(){ const v=input.value.trim(); if(!v) return; input.value=''; sendText(v); }
+  panel.querySelector('#at-send').onclick=send;
+  input.addEventListener('keydown',e=>{ if(e.key==='Enter') send(); });
+
+  // El botón de reserva simplemente arranca la conversación de reserva; el agente ofrece huecos y pide los datos.
+  panel.querySelector('.at-book').onclick=function(){ if(!panel.classList.contains('open')) open(false); sendText('Quiero reservar una llamada'); };
+})();
+</script>
 </body>
 </html>

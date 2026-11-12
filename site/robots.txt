@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-
-Sitemap: https://araceliteruel.dabarma.synology.me/sitemap.xml
+Sitemap: https://araceliteruel.es/sitemap.xml
